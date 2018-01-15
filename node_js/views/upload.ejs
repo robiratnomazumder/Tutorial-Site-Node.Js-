@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Video</title>
+
+
+ <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet">
+            <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/roboto.min.css" rel="stylesheet">
+                    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.min.css" rel="stylesheet">
+                        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css" rel="stylesheet">
+                            <meta charset="utf-8">
+                                <meta content="width=device-width, initial-scale=1.0" name="viewport">
+                                    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+                                        <title>
+                                            Main Page
+                                        </title>
+                                    </meta>
+                                </meta>
+                            </meta>
+                        </link>
+                    </link>
+                </link>
+            </link>
+        </link>
+
+
+</head>
+<body>
+
+    <a href="/"> HOME PAGE </a> &nbsp;
+    <h2> VIDEO UPLOAD </h2>
+<form action="/upload" method="post">
+        <table>
+    
+            
+            <tr>
+                <td>FILE NAME</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>DESCRIPTION</td>
+                <td><input type="text" name="description"></td>
+            </tr>
+            <tr>
+               
+            
+                    <input type='file' name='type'></td>
+            </tr>
+            
+            <tr>
+                <td><input type="submit" value="UPLOAD VIDEO"></td>
+            </tr>
+        </table>
+    </form>
+  
+    
+
+     <% if(locals.error){  %>
+        <%  for(var i=0;i<error.length;i++){ %>
+    
+      
+      <h3> <%= error[i].msg %> </h3> 
+      <% } } %>
+
+      
+
+
+</body>
+</html>
+
+
+
+
+<!-- 
+      <html>
+  <body>
+    <form ref='uploadForm' 
+      id='uploadForm' 
+      action='http://localhost:3000/upload' 
+      method='post' 
+      encType="multipart/form-data">
+        <input type="file" name="sampleFile" />
+        <input type='submit' value='Upload!' />
+    </form>     
+  </body>
+</html> -->
+

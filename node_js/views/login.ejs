@@ -1,0 +1,134 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2> LOGIN </h2>
+	<form action="/login" method="post">
+		<table>
+			<tr>
+				<td>USERNAME</td>
+				<td><input type="text" name="username"></td>
+			</tr>
+			<tr>
+				<td>PASSWORD</td>
+				<td><input type="password" name="password"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Login"></td>
+			</tr>
+		</table>
+	</form>
+	<br>
+	GO TO <a href="/"> HOME PAGE </a> &nbsp; <a href="/signup"> SIGN UP </a>
+	   
+	   
+		<% if(locals.error){ %>
+	  <h3> <%= error %> </h3> 
+	  <% } %>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet">
+            <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/roboto.min.css" rel="stylesheet">
+                    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.min.css" rel="stylesheet">
+                        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css" rel="stylesheet">
+                            <meta charset="utf-8">
+                                <meta content="width=device-width, initial-scale=1.0" name="viewport">
+                                    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+                                        <title>
+                                            Main Page
+                                        </title>
+                                    </meta>
+                                </meta>
+                            </meta>
+                        </link>
+                    </link>
+                </link>
+            </link>
+        </link>
+    </head>
+    <body>
+        <h2 align="center">
+            LOGIN
+        </h2>
+        <br>
+            <a href="/">
+                HOME PAGE ||
+            </a>
+            <a href="/signup">
+                SIGN UP
+            </a>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js">
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.min.js">
+            </script>
+            <script crossorigin="anonymous" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" src="https://code.jquery.com/jquery-3.2.1.js">
+            </script>
+            <script crossorigin="anonymous" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+            </script>
+            <script>
+                $.material.init()
+            </script>
+            <form action="/login" class="form-horizontal" method="post">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="inputUsername">
+                            Username
+                        </label>
+                        <div class="col-md-10">
+                            <input class="form-control" name="username" placeholder="Username...." type="text">
+                            </input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="inputPassword">
+                            Password
+                        </label>
+                        <div class="col-md-10">
+                            <input class="form-control" name="password" placeholder="Password" type="password">
+                                <!--
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Checkbox
+          </label>
+          <label>
+            <input type="checkbox" disabled> Disabled Checkbox
+          </label>
+        </div>
+        <br>
+
+        <div class="togglebutton">
+          <label>
+            <input type="checkbox" checked> Toggle button
+          </label>
+        </div>
+        -->
+                            </input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-10 col-md-offset-2">
+                            <button class="btn btn-default" type="button">
+                                Cancel
+                            </button>
+                            <button class="btn btn-primary" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <% if(locals.error){ %>
+            <h4 style="color: red">
+                <%= error %>
+            </h4>
+            <% } %>
+        </br>
+    </body>
+</html>

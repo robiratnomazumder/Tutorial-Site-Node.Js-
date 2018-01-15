@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Home
+        </title>
+
+
+
+
+ <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet">
+            <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/roboto.min.css" rel="stylesheet">
+                    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.min.css" rel="stylesheet">
+                        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css" rel="stylesheet">
+                            <meta charset="utf-8">
+                                <meta content="width=device-width, initial-scale=1.0" name="viewport">
+                                    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+                                        <title>
+                                            Main Page
+                                        </title>
+                                    </meta>
+                                </meta>
+                            </meta>
+                        </link>
+                    </link>
+                </link>
+            </link>
+        </link>
+
+
+        
+    </head>
+    <style>
+        table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+th {
+    text-align: left;
+}
+    </style>
+    <body>
+        <br>
+            <h2 align="center">
+                Tutorial Tube
+            </h2>
+            <br>
+                <br>
+                    <br>
+                        <% if(username){  %>
+                        <a href="/logout">
+                            LOG OUT ||
+                        </a>
+                        <% }else{ %>
+                        <a href="/login">
+                            LOGIN  ||
+                        </a>
+                        <a href="/signup">
+                            SIGN UP  ||
+                        </a>
+                        <% } %>
+                        <a href="/upload">
+                            UPLOAD VIDEO
+                        </a>
+                        <p>
+                            <%= username %>
+                        </p>
+                        <br>
+                            <br>
+                                <br>
+                                    <!--   <table>          
+            <tr>  
+                <th>id</th> 
+                <th>name</th>  
+                <th>description</th>
+                <th>video</th>
+                <th>play option</th> 
+
+            </tr> -->
+                                    <% if(locals.catList){  %>  
+         <% for(var i = 0; i < catList.length; i++) {%>
+                                    <!-- <tr>  
+                <td><%= catList[i].id %></td> 
+                <td><%= catList[i].name %></td>  
+                <td><%= catList[i].description %></td>
+                <td><%= catList[i].path %></td>
+
+</tr>
+</table> -->
+                                    <div id="imgSlider" style="float:left; padding: 35px">
+                                        <video class="video-js vjs-default-skin vjs-big-play-centered" controls="" height="150" id="example_video_1" preload="auto" width="250">
+                                            <source src="/<%= catList[i].type %>" type="video/mp4">
+                                                <source src="/<%= catList[i].type %>" type="video/ogg">
+                                                </source>
+                                            </source>
+                                        </video>
+                                        <br>
+                                            <h4>
+                                                <a href="/video/play/<%= catList[i].id %>">
+                                                    <%= catList[i].name %>
+                                                </a>
+                                            </h4>
+                                            <h4>
+                                                
+                                                    <%= catList[i].description %>      
+                                            </h4>    <%= catList[i].views %> views
+                                           
+                                            
+                                                
+                                                
+                                            
+                                            <br>
+                                                <% if(username == "admin"){  %>
+                                                <a href="/video/delete/<%= catList[i].id %>">
+                                                    Delete
+                                                </a>
+                                                <% } %>
+                                                <br>
+                                                </br>
+                                            </br>
+                                        </br>
+                                    </div>
+                                    <% }} %>
+                                </br>
+                            </br>
+                        </br>
+                    </br>
+                </br>
+            </br>
+        </br>
+    </body>
+</html>
